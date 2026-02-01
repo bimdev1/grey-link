@@ -23,14 +23,14 @@ Grey-Link creates a "dumb cable" between your Android phone and Linux desktop. A
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Android Device                           │
-│  ┌──────────────────┐     ┌────────────────────────────────┐   │
-│  │   MainActivity   │────▶│   transport.aar (gomobile)     │   │
-│  │  (Kotlin/UI)     │     │   └─ tsnet (userspace WireGuard)│   │
-│  │                  │     │   └─ Native Netmon Hook         │   │
-│  └──────────────────┘     └────────────────────────────────┘   │
+│  ┌──────────────────┐     ┌────────────────────────────────┐    │
+│  │   MainActivity   │───▶│   transport.aar (gomobile)     │    │
+│  │  (Kotlin/UI)     │     │   └─ tsnet(userspace WireGuard)│    │
+│  │                  │     │   └─ Native Netmon Hook        │    │
+│  └──────────────────┘     └────────────────────────────────┘    │
 │           │                              │                      │
 │           ▼                              ▼                      │
-│   ConnectivityManager ──────────▶ UpdateNetworkState()          │
+│   ConnectivityManager ──────────▶ UpdateNetworkState()         │
 │   (Push network state)           (No netlink syscalls!)         │
 └─────────────────────────────────────────────────────────────────┘
                                    │
@@ -40,10 +40,10 @@ Grey-Link creates a "dumb cable" between your Android phone and Linux desktop. A
                                    ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Linux Desktop                            │
-│  ┌──────────────────┐     ┌────────────────────────────────┐   │
-│  │  grey-link CLI   │────▶│   grey-link-daemon             │   │
-│  │  (user commands) │     │   └─ tsnet                      │   │
-│  └──────────────────┘     └────────────────────────────────┘   │
+│  ┌──────────────────┐     ┌────────────────────────────────┐    │
+│  │  grey-link CLI   │───▶│   grey-link-daemon             │    │
+│  │  (user commands) │     │   └─ tsnet                     │    │
+│  └──────────────────┘     └────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
