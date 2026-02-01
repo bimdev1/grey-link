@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GreyLink</string>
+    <string name="connect">Connect</string>
+    <string name="auth_key_hint">Auth Key (tskey-...)</string>
+    <string name="status_placeholder">Status: Idle</string>
+</resources>
